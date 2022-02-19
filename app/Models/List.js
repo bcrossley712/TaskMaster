@@ -11,7 +11,7 @@ export class List {
   get Template() {
     return `
       <div class="col-md-4 ">
-        <div class="m-2 bg-dark text-light shadow rounded p-0 list">
+        <div class="m-2 bg-dark text-light shadow rounded p-0 d-flex flex-column list">
           <div class="rounded-top bg-light p-1 text-dark text-center" style="border: 1.5rem solid ${this.color};">
             <div class="text-end">
               <i class="mdi mdi-close selectable" title="Delete ${this.name} list" onclick="app.tasksController.deleteList('${this.id}')"></i>
@@ -19,7 +19,9 @@ export class List {
             <h3>${this.name}</h3>
             <span>${this.CheckedCount} of ${this.TaskCount}</span>
           </div>
+          <div class="grow">
           ${this.TasksTemplate}
+          </div>
           <form class="p-1 d-flex justify-content-between" onsubmit="app.tasksController.createTask('${this.id}')">
             <input type="text" class="form-control" name="name" id="new-task" aria-describedby="helpId"
               placeholder="New task...">

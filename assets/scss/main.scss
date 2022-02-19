@@ -18,6 +18,9 @@ main {
 }
 
 .list{
-  min-height: 50vh;
+  min-height: 65vh;
 }
 
+.grow{
+  flex-grow: 1;
+}
