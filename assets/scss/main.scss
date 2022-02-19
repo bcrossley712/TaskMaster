@@ -9,11 +9,15 @@ body {
   flex-direction: column;
   min-height: 100vh;
   background-color: $body-bg;
+  font-family: 'Coming Soon', cursive;
+  font-size: 125%;
 }
 
 main {
   flex-grow: 1;
 }
 
-
+.list{
+  min-height: 50vh;
+}
 

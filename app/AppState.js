@@ -1,11 +1,7 @@
-import { List } from "./Models/List.js"
-import { Task } from "./Models/Task.js"
 import { EventEmitter } from "./Utils/EventEmitter.js"
 import { isValidProp } from "./Utils/isValidProp.js"
 
 
-let fakeList = new List({ id: 1, name: 'Create list', color: '#ffffff' })
-let fakeTask = new Task({ name: 'Create task', listId: 1 })
 
 class AppState extends EventEmitter {
   /** @type {import('./Models/List').List[]} */

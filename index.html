@@ -8,35 +8,41 @@
   <link rel="icon" href="https://bcw.blob.core.windows.net/public/img/9977764104160066">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+  <link rel="stylesheet" href="//cdn.materialdesignicons.com/5.4.55/css/materialdesignicons.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Coming+Soon&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/style/main.css">
   <link rel="stylesheet" href="assets/style/style.css">
-  <title>TaskMaster</title>
+  <title>Task Master 🎩</title>
 </head>
 
 <body>
-  <header>
-    <nav class="navbar navbar-dark navbar-expand bg-dark text-light no-select">
-      <a class="navbar-brand ms-3" href="#">
-        <img src="https://codeworks.blob.core.windows.net/public/assets/img/cw-mark.png" height="45" alt=""
-          loading="lazy">
-        <span class="ms-2">TaskMaster</span>
-      </a>
-    </nav>
+  <header class="container-fluid text-center py-4">
+    <h1 class="ms-2">Task Master 🎩</h1>
   </header>
   <main>
-    <div class="container-fluid">
+    <div class="container">
       <div class="row">
-        <div class="col-12">
-          <div id="app"></div>
+        <div class="col-md-6">
+          <div class="mb-3">
+            <!-- TODO Create onsubmit -->
+            <form class="d-flex justify-content-start align-text-center"
+              onsubmit="app.tasksController.createList(event)">
+              <input required type="text" class="form-control w-50 px-3" name="name" id="list-name"
+                aria-describedby="helpId" placeholder="List name...">
+              <p class="m-0 p-2">Color: <input class="p-2" type="color" name="color" value="#000000"></p>
+              <button class="btn btn-outline-primary px-3">Submit</button>
+            </form>
+          </div>
         </div>
+      </div>
+      <div class="row my-2 py-2" id="lists">
+        <!-- STUB START OF LIST TEMPLATE -->
+
+        <!-- -------------END LIST TEMPLATE -->
       </div>
     </div>
   </main>
-  <footer class="bg-dark text-light">
-    <div class="text-center no-select">
-      <p><small>Made with 💖 by Codeworks</small></p>
-    </div>
-  </footer>
+
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
