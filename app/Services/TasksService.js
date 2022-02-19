@@ -1,7 +1,7 @@
 import { ProxyState } from "../AppState.js"
 import { List } from "../Models/List.js"
 import { Task } from "../Models/Task.js"
-
+import { Pop } from "../Utils/Pop.js";
 
 class TasksService {
   createList(newList) {
@@ -17,6 +17,9 @@ class TasksService {
   checkBox(id) {
     let currentTask = ProxyState.tasks.find(t => t.id == id)
     currentTask.complete = !currentTask.complete
+    if (currentTask.complete == true) {
+      Pop.toast('Another one bites the dust!', 'success')
+    }
     ProxyState.tasks = ProxyState.tasks
   }
 

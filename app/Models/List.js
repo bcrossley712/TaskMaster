@@ -10,25 +10,25 @@ export class List {
 
   get Template() {
     return `
-      <div class="col-md-4 ">
-        <div class="m-2 bg-dark text-light shadow rounded p-0 d-flex flex-column list">
-          <div class="rounded-top bg-light p-1 text-dark text-center" style="border: 1.5rem solid ${this.color};">
-            <div class="text-end">
-              <i class="mdi mdi-close selectable" title="Delete ${this.name} list" onclick="app.tasksController.deleteList('${this.id}')"></i>
+        <div class="col-md-4 ">
+          <div class="m-2 bg-dark text-light shadow rounded p-0 d-flex flex-column list">
+            <div class="rounded-top bg-light p-1 text-dark text-center" style="border: 1.5rem solid ${this.color};">
+              <div class="text-end">
+                <i class="mdi mdi-close selectable" title="Delete ${this.name} list" onclick="app.tasksController.deleteList('${this.id}')"></i>
+              </div>
+              <h3>${this.name}</h3>
+              <span>${this.CheckedCount} of ${this.TaskCount}</span>
             </div>
-            <h3>${this.name}</h3>
-            <span>${this.CheckedCount} of ${this.TaskCount}</span>
+            <div class="grow">
+            ${this.TasksTemplate}
+            </div>
+            <form class="p-1 d-flex justify-content-between" onsubmit="app.tasksController.createTask('${this.id}')">
+              <input required minlength="3" maxlength="50" type="text" class="form-control" name="name" id="new-task" aria-describedby="helpId"
+                placeholder="New task...">
+              <button class="btn"><i class="mdi mdi-plus text-light" title="Add new task"></i></button>
+            </form>
           </div>
-          <div class="grow">
-          ${this.TasksTemplate}
-          </div>
-          <form class="p-1 d-flex justify-content-between" onsubmit="app.tasksController.createTask('${this.id}')">
-            <input type="text" class="form-control" name="name" id="new-task" aria-describedby="helpId"
-              placeholder="New task...">
-            <button class="btn"><i class="mdi mdi-plus selectable text-light" title="Add new task"></i></button>
-          </form>
         </div>
-      </div>
     `
   }
 

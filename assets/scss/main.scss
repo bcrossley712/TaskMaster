@@ -18,9 +18,17 @@ main {
 }
 
 .list{
-  min-height: 65vh;
+  min-height: 40vh;
 }
 
 .grow{
   flex-grow: 1;
+}
+
+.hidden{
+  display: none !important;
+}
+
+.strike{
+  text-decoration: line-through;
 }

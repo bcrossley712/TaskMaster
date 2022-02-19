@@ -28,22 +28,20 @@
             <form class="d-flex justify-content-start align-text-center"
               onsubmit="app.tasksController.createList(event)">
               <input required type="text" class="form-control w-50 px-3" name="name" id="list-name"
-                aria-describedby="helpId" placeholder="List name...">
+                aria-describedby="helpId" placeholder="List name..." minlength="3" maxlength="15">
               <p class="m-0 p-2">Color: <input class="p-2" type="color" name="color" value="#000000"></p>
               <button class="btn btn-outline-primary px-3">Submit</button>
             </form>
           </div>
         </div>
       </div>
-      <div class="row my-2 py-2" id="lists">
-        <!-- STUB START OF LIST TEMPLATE -->
-
-        <!-- -------------END LIST TEMPLATE -->
-      </div>
+      <div class="row my-2 py-2" id="lists" data-masonry='{ "percentPosition": true } '></div>
     </div>
   </main>
 
-
+  <script src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js"
+    integrity="sha384-GNFwBvfVxBkLMJpYMOABq3c+d3KnQxudP/mGPkzpZSTYykLBNsZEnG2D9G/X/+7D" crossorigin="anonymous"
+    async></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
     crossorigin="anonymous"></script>

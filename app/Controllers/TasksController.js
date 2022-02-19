@@ -31,8 +31,9 @@ export class TasksController {
   }
 
   async deleteList(listId) {
-    await Pop.confirm()
-    tasksService.deleteList(listId)
+    if (await Pop.confirm()) {
+      tasksService.deleteList(listId)
+    }
   }
 
   createTask(listId) {
@@ -47,8 +48,9 @@ export class TasksController {
   }
 
   async deleteTask(id) {
-    await Pop.confirm()
-    tasksService.deleteTask(id)
+    if (await Pop.confirm()) {
+      tasksService.deleteTask(id)
+    }
   }
 
   checkBox(id) {
