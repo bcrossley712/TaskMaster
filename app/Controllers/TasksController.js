@@ -6,16 +6,17 @@ import { Pop } from "../Utils/Pop.js"
 function _draw() {
   let template = ''
   ProxyState.lists.forEach(l => template += l.Template)
+  // let baseTemplate = template
   document.getElementById('lists').innerHTML = template
 }
 
 export class TasksController {
 
   constructor() {
-    ProxyState.on('lists', _draw)
-    ProxyState.on('tasks', _draw)
-    ProxyState.on('lists', saveState)
     ProxyState.on('tasks', saveState)
+    ProxyState.on('lists', saveState)
+    ProxyState.on('tasks', _draw)
+    ProxyState.on('lists', _draw)
     loadState()
   }
 
