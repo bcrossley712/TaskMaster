@@ -26,7 +26,7 @@
           <div class="mb-3">
             <!-- TODO Create onsubmit -->
             <form class="d-flex justify-content-start align-text-center"
-              onsubmit="app.tasksController.createList(event)">
+              onsubmit="app.listsController.createList(event)">
               <input required type="text" class="form-control w-50 px-3" name="name" id="list-name"
                 aria-describedby="helpId" placeholder="List name..." minlength="3" maxlength="15">
               <p class="m-0 p-2">Color: <input class="p-2" type="color" name="color" value="#000000"></p>
@@ -35,7 +35,10 @@
           </div>
         </div>
       </div>
-      <div class="row my-2 py-2" data-masonry='{ "percentPosition": true }' id="lists"></div>
+      <div id="masonry">
+        <div class="row my-2 py-2" data-masonry='{ "percentPosition": true }' id="lists"></div>
+      </div>
+      <!-- LISTS TEMPLATE -->
     </div>
   </main>
 
